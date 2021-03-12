@@ -1,29 +1,31 @@
-$ (function(){
+$(function() {
 
-$(".prev").click(
-
-
-)
-
-
-$(".next").click(
+$ (".next").click(
 function(){
 var activeImg = $(".images img.active");
+activeImg.removeClass("active")
+activeImg.next().addClass("active");
 if (activeImg.hasClass("last") == true) {
-
-
-}
   $(".images img.first").addClass("active");
 }
+else{
 
-
-activeImg.removeClass("active");
-activeImg.next().addClass("active");
-)
-
-
+  activeImg.next().addClass("active");
 }
+}
+);
+$ (".prev").click(
+function(){
+var activeImg = $(".images img.active");
+activeImg.removeClass("active")
+activeImg.prev().addClass("active");
+if (activeImg.hasClass("first") == true) {
+  $(".images img.last").addClass("active");
+}
+else{
 
-
-
+  activeImg.prev().addClass("active");
+}
+}
+);
 });
